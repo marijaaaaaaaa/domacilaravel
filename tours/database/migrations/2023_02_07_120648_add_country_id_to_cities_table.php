@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attractions', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->string('type');
-            $table->timestamps();
+        Schema::table('cities', function (Blueprint $table) {
+            $table->foreignId('country_id');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attractions');
+        Schema::table('cities', function (Blueprint $table) {
+            //
+        });
     }
 };
