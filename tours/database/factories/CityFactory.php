@@ -17,7 +17,8 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->city(),
+            'founded' => fake()->numberBetween(0, date("Y"))
         ];
     }
 }

@@ -17,7 +17,8 @@ class AttractionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->sentence(3, true),
+            'type' => fake()->word()
         ];
     }
 }
